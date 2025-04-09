@@ -102,5 +102,5 @@ This project is an **AI-powered web app** that generates **RPG-style backstories
 
 ## ✍️ Author
 
-Built by **[Your Name]** for the **Red Pandas Gaming Assignment** 🐾  
+Built by **Ashish Asmit** for the **Red Pandas Gaming Assignment** 🐾  
 > Proudly trained with 💻 CPU power and imagination.
