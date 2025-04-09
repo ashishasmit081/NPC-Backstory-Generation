@@ -16,28 +16,70 @@ This project is an **AI-powered web app** that generates **RPG-style backstories
 
 ## 🚀 How to Run It
 
-### ✅ Local Setup
-> Make sure you have `Python 3.8+`, `pip`, and `virtualenv` or `conda`.
+💠 How to Run Locally
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/yourusername/npc-backstory-generator.git
-   cd npc-backstory-generator
-   ```
+1. ✅ Fine-tune the Model
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Before anything, you must fine-tune the distilgpt2 model on your dataset:
 
-3. **Run the FastAPI server**
-   ```bash
-   uvicorn api:app --reload
-   ```
+- Open the notebook:red-pandas-gaming-assignment (1).ipynb
 
-4. **Open the app**
-   - Go to: `http://localhost:8000` in your browser
-   - Make sure the frontend assets (HTML/CSS) are correctly located in `frontend_html/` and `frontend_css/` folders
+- Run all cells. This will:
+
+- Load and format the dataset.
+
+- Fine-tune the distilgpt2 model on character backstories.
+
+- Save the model to a directory called finetuned-distilgpt2-backstory.
+
+💾 After training, download the entire finetuned-distilgpt2-backstory/ folder and place it in your project root directory.
+
+Structure your directory like this:
+
+```
+├── api.py               # FastAPI backend logic
+├── frontend_html/       # HTML templates
+│   └── frontend.html
+├── frontend_css/        # Medieval-styled CSS
+│   └── frontend.css
+├── finetuned-distilgpt2-backstory/ # Trained model directory
+├── red-pandas-gaming-assignment.ipynb # Notebook for fine-tuning
+└── README.md            # You're here!
+```
+
+2. ✅ Install Dependencies
+
+Make sure you have Python 3.8+ installed.
+
+Option A: Use Virtual Environment (Recommended)
+```bash
+python -m venv venv
+source venv/bin/activate     # On Windows: venv\Scripts\activate
+```
+Option B: Use Conda
+```bash
+conda create -n npcgen python=3.9
+conda activate npcgen
+```
+Install Required Packages
+
+If you don’t already have a requirements.txt, install these manually:
+```bash
+pip install fastapi uvicorn transformers torch jinja2 python-multipart
+```
+Optional: Save dependencies to a filepip freeze > requirements.txt
+
+3. ✅ Run the FastAPI Server
+
+Start the API server:
+```bash
+uvicorn api:app --reload
+```
+Open your browser and go to:
+```bash
+http://localhost:8000
+```
+You’ll see the front-end interface where you can enter NPC descriptions and generate backstories & quests.
 
 ---
 
