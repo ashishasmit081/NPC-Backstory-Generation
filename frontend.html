@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NPC Generator</title>
+  <link rel="stylesheet" href="/frontend_css/frontend.css" />
+</head>
+<body>
+  <h1>🎮 NPC Backstory & Dialogue Generator</h1>
+
+  <form id="npcForm">
+    <label>Name and Description:</label>
+    <input type="text" id="prompt" placeholder="e.g. Aria, a noble archer from Eldoria" required />
+
+    <label>Backstory Style:</label>
+    <select id="style">
+      <option value="short">Short</option>
+      <option value="medium" selected>Medium</option>
+      <option value="detailed">Detailed</option>
+    </select>
+
+    <button type="submit">Generate</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    document.getElementById("npcForm").onsubmit = async function(e) {
+      e.preventDefault();
+      const prompt = document.getElementById("prompt").value;
+      const style = document.getElementById("style").value;
+
+      try {
+        const res = await fetch(`http://localhost:8000/generate?prompt=${encodeURIComponent(prompt)}&style=${style}`);
+        if (!res.ok) {
+          const errorText = await res.text();
+          document.getElementById("output").innerHTML = `<p style="color:red;">❌ Error: ${errorText}</p>`;
+          return;
+        }
+
+        const data = await res.json();
+        document.getElementById("output").innerHTML = `
+          <h2>🧝 Backstory</h2><p>${data.backstory}</p>
+           <h2>🗣️ Dialogue</h2><p>${data.dialogue}</p>
+        `;
+      } catch (error) {
+        document.getElementById("output").innerHTML = `<p style="color:red;">❌ Error: ${error.message}</p>`;
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    background-color: #1e1b18;
+    color: #41321f;
+    font-family: 'Georgia', serif;
+    padding: 30px;
+    background-image: url('https://www.egypttoursportal.com/images/2024/12/Ancient-Egyptian-Houses-Egypt-Tours-Portal_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+      }
+  
+  h1 {
+    text-align: center;
+color: #d4af37;
+font-size: 2em;
+margin-bottom: 30px;
+font-family: 'Cinzel Decorative', serif;
+text-shadow: 2px 2px 4px #000; /* Optional: adds depth like engraved letters */
+
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(210, 206, 201, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 0 10px #d4af37;
+  }
+  
+  label, select, input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+  
+  button {
+    background-color: #d4af37;
+    color: #1e1b18;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  #output {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-left: 4px solid #d4af37;
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
